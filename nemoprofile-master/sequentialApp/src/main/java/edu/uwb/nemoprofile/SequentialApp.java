@@ -44,6 +44,11 @@ public class SequentialApp {
 			System.err.println(e);
 			System.exit(-1);
 		}
+                
+                System.out.println("Print vertex to index map =" + targetGraph.getNameToIndexMap());
+                
+                // If want to save the name to index map to the file
+                targetGraph.write_nametoIndex("Name_Index.txt");
 		
                 /* Step1: analyze target graph*/
 		System.out.println("Analyzing target graph...");
@@ -127,7 +132,7 @@ public class SequentialApp {
                 * To go different option, just comment out all the method from this line until encounter 22222222222222 
                 */
                 
-                 //222222222222222222222222222222222222222222222222222222222222222222////         
+                /*//222222222222222222222222222222222222222222222222222222222222222222////         
                 
                 
                 
@@ -182,9 +187,10 @@ public class SequentialApp {
 						                      targetLabelToRelativeFrequency);
 		System.out.println(relativeFrequencyAnalyzer);
                 
-               //  Display the nemoprofile result based on pvalue<0.05. If the last paramenter is null, "NemoProfile.txt" is default
+               //  Display the nemoprofile result based on pvalue<0.05. If the file name is null, "NemoProfile.txt" is default,
+               // If the nametoindex map is not given (given as null), then the nemoprofile provide as index instead of original vertex name
                 SubgraphProfile built = NemoProfileBuilder.buildwithPvalue(subgraphCount, 
-                        relativeFrequencyAnalyzer, 0.05, "NemoProfile.txt");
+                        relativeFrequencyAnalyzer, 0.05, "NemoProfile.txt",targetGraph.getNameToIndexMap() );
                 
                 // Print the result in screen
                 System.out.println("NemoProfile=\n" + built+"\n");
@@ -195,14 +201,14 @@ public class SequentialApp {
                 
                 //222222222222222222222222222222222222222222222222222222222222222222////  
                 
-                
+                */
                 
                 /* The last option is "SubgraphCollection", which write all instances of each pattern, and frequency of each pattern
                 ** It is recormended to use for moderate graph size or motif size.
                 * To go different option, just comment out all the method from this line until encounter 33333333333333333333333333333333333333333 
                 */
                 
-               /* //33333333333333333333333333333333333333333////         
+                //33333333333333333333333333333333333333333////         
                 
                 
              
@@ -269,13 +275,13 @@ public class SequentialApp {
                
                 //  Write the nemocollection result based on pvalue<0.05.                
                 System.out.println("Writing network motif instances to NemoCollection file");
-               NemoCollectionBuilder.buildwithPvalue(subgraphCount, relativeFrequencyAnalyzer, 
-                       0.05, "NemoCollection.txt");
+               NemoCollectionBuilder.buildwithZScore(subgraphCount, relativeFrequencyAnalyzer, 
+                       2, "NemoCollection.txt", targetGraph.getNameToIndexMap());
  
 
  
 		System.out.println("NemoCollection Compete");	
                 //33333333333333333333333333333333333333333////     
-                */
+                
 	}
 }
