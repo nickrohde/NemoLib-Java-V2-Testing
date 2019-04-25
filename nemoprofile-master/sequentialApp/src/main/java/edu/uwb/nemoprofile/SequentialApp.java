@@ -270,13 +270,18 @@ public class SequentialApp {
                 
             
                // This is optional, if the user want to collect all subgraphs with canonical label in a file
-               System.out.println("Writing subgraphs to subgraphcollection file");
-               NemoCollectionBuilder.buildSubgraphCollection(subgraphCount, "SubgraphCollection.txt");
-               
-                //  Write the nemocollection result based on pvalue<0.05.                
+                 //  Write the nemocollection result based on zscore thresh (anything with >=2 is collected) .                
                 System.out.println("Writing network motif instances to NemoCollection file");
                NemoCollectionBuilder.buildwithZScore(subgraphCount, relativeFrequencyAnalyzer, 
-                       2, "NemoCollection.txt", targetGraph.getNameToIndexMap());
+                       2, "NemoCollectionZscore.txt", targetGraph.getNameToIndexMap());
+               
+               //  Write the nemocollection result based on pvalue thresh (anything with <0.05 is collected) .  
+               NemoCollectionBuilder.buildwithPvalue(subgraphCount, relativeFrequencyAnalyzer, 
+                       0.05, "NemoCollectionPValue.txt", targetGraph.getNameToIndexMap());
+               
+               //  Write the subgraph collection 
+               NemoCollectionBuilder.buildwithPvalue(subgraphCount, relativeFrequencyAnalyzer, 
+                       1, "SubgraphCollection.txt", targetGraph.getNameToIndexMap());
  
 
  
