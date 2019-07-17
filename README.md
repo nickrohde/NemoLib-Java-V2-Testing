@@ -12,9 +12,10 @@ https://github.com/Kimw6/NemoLib-Java-V2
 1) git clone https://github.com/Kimw6/nemoprofile.git
 2) Install
 
-   cd sequentialApp
-3) Edit compile.sh for the path for nemolib-0.1-SNAPSHOT.jar
-4) Edit run.sh for the correct path for nemolib-0.1-SNAPSHOT.jar
+   - cd sequentialApp
+   - Edit compile.sh for the path for nemolib-0.1-SNAPSHOT.jar
+   - Edit run.sh for the correct path for nemolib-0.1-SNAPSHOT.jar
+   
 5) Compile and run
    ./compile.sh
    ./run.sh ../data/test01 3 100
