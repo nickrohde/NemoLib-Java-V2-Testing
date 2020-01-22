@@ -11,11 +11,15 @@ https://github.com/Kimw6/NemoLib-Java-V2
 * Compile this testing files with the following commands
 1) git clone https://github.com/Kimw6/NemoLib-Java-V2-Testing.git
 2) Install
-
+   - cd NemoLib-Java-V2-Testing/nemoprofile-master/sequentialApp/src/main/resources/
+   - chmod 777 labelg
    - cd NemoLib-Java-V2-Testing/nemoprofile-master/sequentialApp/
-   - Edit compile.sh for the path for nemolib-0.1-SNAPSHOT.jar
+   - chmod 777 compile.sh
+   - Edit compile.sh for the path for nemolib-0.1-SNAPSHOT.jar (in the folder, NemoLib-Java-V2/nemolib-master/target/)
+   - chmod 777 run.sh
    - Edit run.sh for the correct path for nemolib-0.1-SNAPSHOT.jar
    
+     
 5) Compile and run
    ./compile.sh
    ./run.sh ../data/test01 3 100
