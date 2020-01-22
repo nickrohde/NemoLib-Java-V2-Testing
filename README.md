@@ -1,6 +1,6 @@
 # NemoLib-V2--Testing
 ===========
-This repository includes sample programs designed to run with the `nemolib` (https://github.com/Kimw6/NemoLib-Java) 
+This repository includes sample programs designed to run with the `nemolib` (https://github.com/Kimw6/NemoLib-Java-V2) 
 library, specifically to execute the NemoProfile algorithm both sequentially 
 and in parallel.
 
