@@ -9,6 +9,8 @@ import java.util.Set;
 import java.util.BitSet;
 
 public class SequentialApp {
+	
+	// you can change these values
 
 	private static final double P_THRESH = 0.1;
 	private static final int RAND_GRAPH_COUNT = 1000;
