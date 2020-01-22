@@ -9,10 +9,10 @@ Testing in Linux
 * Install the `nemolib` library, located at: 
 https://github.com/Kimw6/NemoLib-Java-V2
 * Compile this testing files with the following commands
-1) git clone https://github.com/Kimw6/nemoprofile.git
+1) git clone --recursive https://github.com/Kimw6/nemoprofile.git
 2) Install
 
-   - cd nemoprofile/sequentialApp
+   - cd NemoLib-Java-V2-Testing/nemoprofile-master/sequentialApp/
    - Edit compile.sh for the path for nemolib-0.1-SNAPSHOT.jar
    - Edit run.sh for the correct path for nemolib-0.1-SNAPSHOT.jar
    
