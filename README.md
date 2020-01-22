@@ -9,7 +9,7 @@ Testing in Linux
 * Install the `nemolib` library, located at: 
 https://github.com/Kimw6/NemoLib-Java-V2
 * Compile this testing files with the following commands
-1) git clone --recursive https://github.com/Kimw6/nemoprofile.git
+1) git clone https://github.com/Kimw6/NemoLib-Java-V2-Testing.git
 2) Install
 
    - cd NemoLib-Java-V2-Testing/nemoprofile-master/sequentialApp/
