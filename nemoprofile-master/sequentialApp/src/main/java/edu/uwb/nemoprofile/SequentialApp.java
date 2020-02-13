@@ -19,17 +19,13 @@ public class SequentialApp {
             
 
 		String filename = args[0];
+		String out_file = args[4];
 		System.out.println("filename = " + args[0]);
 		int motifSize = Integer.parseInt(args[1]);
 		int randGraphCount = Integer.parseInt(args[2]);
                 boolean directed = false;
 
-                if(args.length>3)
-                    if(Integer.parseInt(args[3])>0) 
-                        directed=true;
-                
- 		
-		if (motifSize < 3) {
+		if (motifSize < 3){
 		    System.err.println("Motif size must be 3 or larger");
 		    System.exit(-1);
 		}
@@ -47,10 +43,8 @@ public class SequentialApp {
 			System.exit(-1);
 		}
                 
-                System.out.println("Print vertex to index map =" + targetGraph.getNameToIndexMap());
-                
                 // If want to save the name to index map to the file
-                targetGraph.write_nametoIndex("Name_Index.txt");
+                //targetGraph.write_nametoIndex("Name_Index.txt");
 		
                 /* Step1: analyze target graph*/
 		System.out.println("Analyzing target graph...");
@@ -273,17 +267,17 @@ public class SequentialApp {
             
                // This is optional, if the user want to collect all subgraphs with canonical label in a file
                  //  Write the nemocollection result based on zscore thresh (anything with >=2 is collected) .                
-                System.out.println("Writing network motif instances to NemoCollection file");
-               NemoCollectionBuilder.buildwithZScore(subgraphCount, relativeFrequencyAnalyzer, 
-                       2, "NemoCollectionZscore.txt", targetGraph.getNameToIndexMap());
+                //System.out.println("Writing network motif instances to NemoCollection file");
+               //NemoCollectionBuilder.buildwithZScore(subgraphCount, relativeFrequencyAnalyzer, 
+                //       2, "NemoCollectionZscore.txt", targetGraph.getNameToIndexMap());
                
                //  Write the nemocollection result based on pvalue thresh (anything with <0.05 is collected) .  
                NemoCollectionBuilder.buildwithPvalue(subgraphCount, relativeFrequencyAnalyzer, 
-                       0.05, "NemoCollectionPValue.txt", targetGraph.getNameToIndexMap());
+                       0.05, out_file, targetGraph.getNameToIndexMap());
                
                //  Write the subgraph collection 
-               NemoCollectionBuilder.buildwithPvalue(subgraphCount, relativeFrequencyAnalyzer, 
-                       1, "SubgraphCollection.txt", targetGraph.getNameToIndexMap());
+               //NemoCollectionBuilder.buildwithPvalue(subgraphCount, relativeFrequencyAnalyzer, 
+               //        1, "SubgraphCollection.txt", targetGraph.getNameToIndexMap());
  
 
  

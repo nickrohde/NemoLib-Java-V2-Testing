@@ -11,10 +11,11 @@ set -e
   exit 1
 
 # execution variables
+nemo_jar="${HOME}/nemolib/nemolib-master/target/nemolib-0.1-SNAPSHOT.jar"
 data_file=$1
 motif_size=$2
 rand_graphs=$3
-directed=$4
+output_path=$4
 
 # execute
-java -Xms1g -Xmx8g -cp ./nemolib-0.1-SNAPSHOT.jar:out:. SequentialApp $data_file $motif_size $rand_graphs $directed
+time java -Xms1g -Xmx8g -cp ${nemo_jar}:out:. SequentialApp ${data_file} ${motif_size} ${rand_graph} ${output_path}
